@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset=utf-8>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+		<title>Perudo ! ©GUITOUNE</title>  
+		
+		<link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
+		
+		<script type="text/javascript" charset="utf-8" src="js/cordova-1.8.1.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.1.0.min.js"></script>
+		<script type="text/javascript">
+			(function(){
+				$(document).ready(function() {
+					function randInt(min,max) { 
+						return Number((Math.floor(Math.random()*(max-min+1)))+min);
+					}
+					
+					$("#footul a").click(function() {
+						for(i=1; i <= 6; i++) {
+							$("#de"+i).empty();
+						}
+						var nbDes = parseInt($(this).data("value"));
+						for(i=1; i <= nbDes; i++) {
+							$("#de"+i).empty().append("<img src='imgs/"+ randInt(1, 6) +".png' width='100%' />");
+						}
+						
+					});
+				});
+			})();
+    	</script>
+	</head>
+	<body>
+		<div data-role="page" data-theme="a" data-content-theme="a" >
+	      <div data-role="header">		
+	        <div data-role="navbar" style="text-align:center">
+	          <img src="imgs/header.png" width='30%' />
+	        </div>
+	      </div>
+	      <div class="ui-grid-b" id="content" style="text-align:center;">
+	        <div class="ui-block-a" id="de1"></div>
+	        <div class="ui-block-b" id="de2"></div>
+	        <div class="ui-block-c" id="de3"></div>
+	        <div class="ui-block-a" id="de4"></div>
+	        <div class="ui-block-b" id="de5"></div>
+	        <div class="ui-block-c" id="de6"></div>
+	      </div>
+	      <div data-role="footer" data-position="fixed">		
+	        <div data-role="navbar">
+	          Nombre de d&eacute;s &agrave; lancer :
+	          <ul id="footul">
+	            <li><a href="#" data-value="1">1</a></li>
+	            <li><a href="#" data-value="2">2</a></li>
+	            <li><a href="#" data-value="3">3</a></li>
+	            <li><a href="#" data-value="4">4</a></li>
+	            <li><a href="#" data-value="5">5</a></li>
+	            <li><a href="#" data-value="6">6</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+	</body>
+</html>
